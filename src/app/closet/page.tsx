@@ -1,11 +1,8 @@
 import Footer from "../components/footer";
 import Item from "./item";
+import { ItemType } from "./types";
 
-function getItems(): {
-  name: string;
-  imageLink: string;
-  previousOutfitsLink: string[];
-}[] {
+function getItems(): ItemType[] {
   return [
     {
       name: "Crop Top",
@@ -30,6 +27,7 @@ function getItems(): {
 
 export default function Page() {
   const items = getItems();
+  // make async
   return (
     <div className="h-full">
       <main>
@@ -41,8 +39,9 @@ export default function Page() {
           {/* Right - Item Lists */}
           <div className="col-span-2">
             <ul>
-              {items.map((item) => (
-                <Item
+              {items.map((item, i) => (
+                <Item 
+                  key={i}
                   name={item.name}
                   imageLink={item.imageLink}
                   previousOutfitsLink={item.previousOutfitsLink}
