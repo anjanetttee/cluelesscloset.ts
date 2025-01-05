@@ -3,3 +3,10 @@ export type ItemType = {
     imageLink: string;
     previousOutfitsLink: string[];
 }
+
+export enum ItemEnum {
+    Tops,
+    Bottoms,
+    Shoes,
+    Accessories
+}
